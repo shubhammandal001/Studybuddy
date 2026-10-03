@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Chat from "./pages/Chat";
 
 export default function App() {
   return (
@@ -13,6 +14,11 @@ export default function App() {
         path="/dashboard"
         element={<ProtectedRoute><Dashboard /></ProtectedRoute>}
       />
+      <Route
+        path="/chat/:id"
+        element={<ProtectedRoute> <Chat /> </ProtectedRoute>}
+      />
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );

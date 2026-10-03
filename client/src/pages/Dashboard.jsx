@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import api from "../api";
 
@@ -78,7 +78,10 @@ export default function Dashboard() {
             <strong>{d.title}</strong>
             <small>{d.pageCount} pages</small>
           </div>
-          <button className="danger" onClick={() => handleDelete(d._id)}>Delete</button>
+          <div className="doc-actions">
+            <Link className ="chat-btn" to={`/chat/${d._id}`}>Chat</Link>
+            <button className="danger" onClick={() => handleDelete(d._id)}>Delete</button>
+          </div>
         </div>
       ))}
     </div>
