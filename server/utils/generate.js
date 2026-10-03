@@ -2,7 +2,7 @@ import { GoogleGenAI } from "@google/genai";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export async function generateAnswer(prompt) {
+export async function generateAnswer(prompt,config) {
   const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   const models = [
     process.env.GEMINI_MODEL,
@@ -13,7 +13,7 @@ export async function generateAnswer(prompt) {
   for (const model of models) {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        const res = await ai.models.generateContent({ model, contents: prompt });
+        const res = await ai.models.generateContent({ model, contents: prompt,config });
         return res.text;
       } catch (err) {
         lastErr = err;
