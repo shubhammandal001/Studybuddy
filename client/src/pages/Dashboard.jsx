@@ -80,6 +80,7 @@ export default function Dashboard() {
           </div>
           <div className="doc-actions">
             <Link className ="chat-btn" to={`/chat/${d._id}`}>Chat</Link>
+            <Link className ="chat-btn" to={`/quiz/${d._id}`}>Quiz</Link>
             <button className="danger" onClick={() => handleDelete(d._id)}>Delete</button>
           </div>
         </div>

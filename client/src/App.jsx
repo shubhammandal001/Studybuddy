@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Chat from "./pages/Chat";
+import Quiz from "./pages/Quiz";
 
 export default function App() {
   return (
@@ -17,6 +18,10 @@ export default function App() {
       <Route
         path="/chat/:id"
         element={<ProtectedRoute> <Chat /> </ProtectedRoute>}
+      />
+      <Route 
+        path="/quiz/:id"
+        element={<ProtectedRoute> <Quiz /> </ProtectedRoute>}
       />
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
