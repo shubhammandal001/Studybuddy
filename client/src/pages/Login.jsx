@@ -23,6 +23,10 @@ export default function Login() {
 
   return (
     <div className="auth-box">
+      <div className="brand auth-brand">
+          <span>📚</span>
+          <span className="brand-text">StudyBuddy</span>
+      </div>
       <h2>Login</h2>
       {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>

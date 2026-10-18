@@ -867,3 +867,5 @@ a:focus-visible,
 
 .opt { box-shadow: none; }
 @media (max-width: 480px) { .nav-user { display: none; } }
+
+.auth-brand { justify-content: center; margin-bottom: 20px; font-size: 26px;}
