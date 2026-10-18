@@ -47,7 +47,7 @@ export default function Chat() {
 
       <div className="chat-messages">
         {messages.length === 0 && (
-          <p className="hint">Apne PDF se kuch bhi pooch, jaise "is chapter ka summary de".</p>
+          <p className="hint">Ask anything from your PDF, such as 'give me a summary of this chapter'.</p>
         )}
         {messages.map((m, i) => (
           <div key={i} className={`msg ${m.role} ${m.error ? "err" : ""}`}>
@@ -62,7 +62,7 @@ export default function Chat() {
             )}
           </div>
         ))}
-        {loading && <div className="msg ai"><p>Soch raha hu...</p></div>}
+        {loading && <div className="msg ai"><p>Preparing.....</p></div>}
         <div ref={bottomRef} />
       </div>
 

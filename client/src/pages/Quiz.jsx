@@ -64,14 +64,14 @@ export default function Quiz() {
       {/* 1. Start screen */}
       {questions.length === 0 && (
         <div className="quiz-card">
-          <p>Apne notes se quiz banao. Kitne sawal?</p>
+          <p>Create a quiz from your notes. Specify question count.</p>
           <select value={count} onChange={(e) => setCount(Number(e.target.value))}>
             <option value={5}>5 questions</option>
             <option value={8}>8 questions</option>
             <option value={10}>10 questions</option>
           </select>
           <button onClick={startQuiz} disabled={loading}>
-            {loading ? "Quiz ban raha hai..." : "Start Quiz"}
+            {loading ? "Creating..." : "Start Quiz"}
           </button>
         </div>
       )}
