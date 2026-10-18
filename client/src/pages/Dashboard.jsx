@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import Navbar from "../components/Navbar";
+
 import api from "../api";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
-  const navigate = useNavigate();
+  
   const [docs, setDocs] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState("");
@@ -51,17 +53,10 @@ export default function Dashboard() {
     }
   };
 
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
-
   return (
     <div className="dash">
-      <header className="dash-header">
-        <h2>Welcome, {user.name} 👋</h2>
-        <button onClick={handleLogout}>Logout</button>
-      </header>
+      <Navbar/>
+      <h2 className = "welcome">Welcome, {user.name} 👋🏿 </h2>
 
       <label className="upload-box">
         {uploading ? "Uploading..." : "+ Upload a PDF (max 10MB)"}
@@ -71,7 +66,9 @@ export default function Dashboard() {
       {error && <p className="error">{error}</p>}
 
       <h3>Your documents</h3>
-      {docs.length === 0 && <p>Abhi koi document nahi hai.</p>}
+      {docs.length === 0 && (
+         <div className="empty">📄 No Documents. Upload your Documents!</div>
+      )}
       {docs.map((d) => (
         <div className="doc-item" key={d._id}>
           <div>

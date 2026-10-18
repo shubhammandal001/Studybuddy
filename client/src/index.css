@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-/* =========================================
-   STUDYBUDDY — PREMIUM AI THEME
-   Midnight Navy + Electric Cyan + Teal
-========================================= */
 
 :root {
   --primary: #22D3EE;
@@ -79,9 +75,9 @@ body {
   color: #FFFFFF;
 }
 
-/* =========================================
+/*
    BUTTONS
-========================================= */
+*/
 
 button,
 .chat-btn {
@@ -825,3 +821,49 @@ a:focus-visible,
     padding: 26px 16px;
   }
 }
+
+/* navbar polish */
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 14px 0; 
+    border-bottom: 1px solid var(--border); }
+
+.brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    font-size: 20px; 
+    font-weight: 800; }
+
+.brand-text { 
+    background: linear-gradient(135deg, #67E8F9, #3B82F6); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    color: transparent; }
+
+.nav-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; }
+
+.nav-user { 
+    color: var(--muted); 
+    font-size: 14px; }
+
+.welcome { 
+    margin: 24px 0 0; 
+    font-size: 24px; 
+    font-weight: 800; 
+    letter-spacing: -0.7px; }
+
+.empty { 
+    text-align: center; 
+    padding: 34px 16px; 
+    color: var(--muted); 
+    border: 1px dashed var(--border); 
+    border-radius: var(--radius); }
+
+.opt { box-shadow: none; }
+@media (max-width: 480px) { .nav-user { display: none; } }
